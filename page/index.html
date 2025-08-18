@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Telephone Scams in Hong Kong: Research & Awareness</title>
+    <meta
+      name="description"
+      content="Comprehensive research on telephone scam trends in Hong Kong, including survey findings, interviews, and prevention strategies."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "GA_MEASUREMENT_ID");
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav class="container">
+        <div class="nav-brand">
+          <span class="shield-icon">🛡️</span>
+          <h1>HK Telephone Scams Research</h1>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#survey">Survey</a></li>
+          <li><a href="#interviews">Interviews</a></li>
+          <li><a href="#prevention">Prevention</a></li>
+        </ul>
+        <div class="mobile-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <div id="sidebar" class="sidebar">
+      <div class="sidebar-header">
+        <h3>Table of Contents</h3>
+        <button class="sidebar-close">&times;</button>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#overview" class="sidebar-link">
+          <span class="sidebar-icon">📊</span>
+          <span class="sidebar-text">Overview</span>
+        </a>
+        <a href="#research" class="sidebar-link">
+          <span class="sidebar-icon">🔍</span>
+          <span class="sidebar-text">Research Findings</span>
+        </a>
+        <a href="#survey" class="sidebar-link">
+          <span class="sidebar-icon">📋</span>
+          <span class="sidebar-text">Survey Results</span>
+        </a>
+        <a href="#interviews" class="sidebar-link">
+          <span class="sidebar-icon">🎤</span>
+          <span class="sidebar-text">Interviews</span>
+        </a>
+        <a href="#prevention" class="sidebar-link">
+          <span class="sidebar-icon">🛡️</span>
+          <span class="sidebar-text">Prevention</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Sidebar Toggle Button -->
+    <button id="sidebar-toggle-fixed" class="sidebar-toggle-fixed">📖</button>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="container">
+          <h1>Telephone Scams in Hong Kong</h1>
+          <p class="hero-subtitle">
+            Understanding the Growing Threat and Building Awareness
+          </p>
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-number">44,480</span>
+              <span class="stat-label">Deception Cases in 2024</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">9,204</span>
+              <span class="stat-label">Telephone Scams in 2024</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">HK$2.9B</span>
+              <span class="stat-label">Total Losses in 2024</span>
+            </div>
+          </div>
+          <a href="#overview" class="cta-button">Learn More</a>
+        </div>
+      </section>
+
+      <!-- Overview Section -->
+      <section id="overview" class="section">
+        <div class="container">
+          <h2>The Problem</h2>
+          <div class="overview-grid">
+            <div class="overview-card">
+              <div class="icon">📈</div>
+              <h3>Rising Trend</h3>
+              <p>
+                Telephone scam cases in Hong Kong have increased dramatically,
+                especially since COVID-19. From 3,213 cases in 2023 to 9,204
+                cases in 2024 - nearly tripling in just one year.
+              </p>
+            </div>
+            <div class="overview-card">
+              <div class="icon">🎯</div>
+              <h3>Vulnerable Groups</h3>
+              <p>
+                International students, elderly citizens, and newcomers to Hong
+                Kong are particularly vulnerable to sophisticated scam tactics
+                and social engineering.
+              </p>
+            </div>
+            <div class="overview-card">
+              <div class="icon">💰</div>
+              <h3>Financial Impact</h3>
+              <p>
+                Total losses from telephone scams reached HK$2.9 billion in
+                2024, more than doubling from HK$1.1 billion in 2023.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Research Section -->
+      <section id="research" class="section bg-light">
+        <div class="container">
+          <h2>Research Findings</h2>
+
+          <div class="chart-gallery-responsive">
+            <div class="chart-item">
+              <div class="chart-image-container">
+                <img
+                  src="assets/deception-chart.png"
+                  alt="Deception Cases in Hong Kong 2014-2024"
+                  class="chart-image-gallery"
+                  onclick="openLightbox('assets/deception-chart.png', 'Deception Cases in Hong Kong 2014-2024')"
+                />
+              </div>
+              <p class="chart-title">Overall Deception Cases Trend</p>
+              <p class="chart-source">
+                Source:
+                <a
+                  href="https://www.police.gov.hk/ppp_en/09_statistics/csd.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Hong Kong Police Force Crime Statistics</a
+                >
+              </p>
+            </div>
+
+            <div class="chart-item">
+              <div class="chart-image-container">
+                <img
+                  src="assets/scams-figures.png"
+                  alt="Telephone Scam Statistics and Analysis"
+                  class="chart-image-gallery"
+                  onclick="openLightbox('assets/scams-figures.png', 'Telephone Scam Statistics and Analysis')"
+                />
+              </div>
+              <p class="chart-title">Telephone Scam Analysis</p>
+              <p class="chart-source">
+                Source:
+                <a
+                  href="https://www.adcc.gov.hk/en-hk/statistic.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Anti-Deception Coordination Centre</a
+                >
+              </p>
+            </div>
+          </div>
+
+          <p class="chart-caption-gallery">
+            Click on any chart to view in full size. Data shows comprehensive
+            analysis of telephone scam trends in Hong Kong from multiple
+            government sources.
+          </p>
+
+          <div class="research-insights-centered">
+            <h3>Key Insights</h3>
+            <ul class="formal-list">
+              <li>
+                <strong>COVID-19 Impact:</strong> Sharp rise from 8,216 cases in
+                2019 to 15,553 in 2020 (89.3% increase)
+              </li>
+              <li>
+                <strong>Continued Growth:</strong> Sustained high growth rates
+                through 2023, with slight stabilization in 2024
+              </li>
+              <li>
+                <strong>Telephone Scams:</strong> Specific telephone scam cases
+                tripled from 2023 to 2024
+              </li>
+              <li>
+                <strong>Positive Trend:</strong> Early 2025 shows reduced
+                average losses per case, suggesting improved awareness
+              </li>
+            </ul>
+
+            <div class="trend-analysis">
+              <h4>Why the Increase?</h4>
+              <p>
+                The pandemic forced a shift to digital interactions, creating
+                new opportunities for scammers. Increased online activity,
+                remote work, and reliance on telecommunications made people more
+                vulnerable to phone-based scams.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lightbox Modal -->
+      <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-content">
+          <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+          <img id="lightbox-image" src="" alt="" />
+          <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+      </div>
+
+      <!-- Survey Section -->
+      <section id="survey" class="section">
+        <div class="container">
+          <h2>Survey Results</h2>
+          <p class="section-subtitle">
+            53 participants shared their experiences with telephone scams
+          </p>
+
+          <div class="survey-grid">
+            <div class="survey-stat">
+              <div class="stat-icon">📊</div>
+              <h3>Scam Call Frequency</h3>
+              <p>
+                Most respondents receive scam calls
+                <strong>frequently</strong> (4+ times per week)
+              </p>
+            </div>
+            <div class="survey-stat">
+              <div class="stat-icon">☎️</div>
+              <h3>Common Scam Types</h3>
+              <p>
+                <strong>Fake bank calls</strong> followed by lottery/prize scams
+                are most reported
+              </p>
+            </div>
+            <div class="survey-stat">
+              <div class="stat-icon">📋</div>
+              <h3>Reporting Rate</h3>
+              <p>
+                Only <strong>10%</strong> have ever reported scam calls to
+                authorities
+              </p>
+            </div>
+            <div class="survey-stat">
+              <div class="stat-icon">⚠️</div>
+              <h3>Victimization</h3>
+              <p>
+                <strong>3.8%</strong> of respondents reported falling victim to
+                scams
+              </p>
+            </div>
+          </div>
+
+          <div class="prevention-chart">
+            <h3>Prevention Measures Used</h3>
+            <div class="chart-image-container">
+              <img
+                src="assets/prevention-measures.png"
+                alt="Prevention Measures Survey Results"
+                class="chart-image-gallery"
+                onclick="openLightbox('assets/prevention-measures.png', 'Prevention Measures Survey Results')"
+              />
+            </div>
+            <p class="chart-caption">
+              Most common prevention strategies used by survey respondents.
+              Click to view in full size.
+              <br />
+              <em>Source: GECC4130 Survey (53 participants)</em>
+            </p>
+          </div>
+
+          <div class="survey-insights">
+            <h3>Key Behavioral Patterns</h3>
+            <div class="insight-grid">
+              <div class="insight-card">
+                <h4>All-or-Nothing Pattern</h4>
+                <p>
+                  Respondents either employ multiple prevention strategies or
+                  take no action at all.
+                </p>
+              </div>
+              <div class="insight-card">
+                <h4>Emotional Impact</h4>
+                <p>
+                  Even without financial loss, most report irritation, feeling
+                  unsafe, and anxiety.
+                </p>
+              </div>
+              <div class="insight-card">
+                <h4>Campaign Awareness</h4>
+                <p>
+                  75% recall seeing anti-scam campaigns, but few rate them as
+                  highly effective.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interviews Section -->
+      <section id="interviews" class="section bg-light">
+        <div class="container">
+          <h2>Personal Stories</h2>
+          <p class="section-subtitle">
+            Real experiences from 5 interview participants
+          </p>
+
+          <div class="interview-stories">
+            <div class="story-card">
+              <h3>A***'s Experience</h3>
+              <div class="story-content">
+                <p>
+                  <strong>Daily Impact:</strong> Receives 3-4 scam calls daily,
+                  up to 8 on busy days
+                </p>
+                <p>
+                  <strong>Friend's Close Call:</strong> A mainland Chinese
+                  student friend nearly lost HK$200,000 to a fake police scam
+                </p>
+                <p>
+                  <strong>Key Issue:</strong> Difficulty identifying scam calls
+                  as patterns become less reliable
+                </p>
+              </div>
+              <div class="story-quote">
+                "There's a significant gap in awareness, particularly among
+                foreign students unfamiliar with local practices"
+              </div>
+            </div>
+
+            <div class="story-card">
+              <h3>S***'s Perspective</h3>
+              <div class="story-content">
+                <p>
+                  <strong>International View:</strong> Compares Hong Kong to
+                  South Korea's anti-scam efforts
+                </p>
+                <p>
+                  <strong>Language Barrier:</strong> Struggles with Cantonese
+                  scam calls, switches to Mandarin
+                </p>
+                <p>
+                  <strong>Effectiveness Rating:</strong> Rates HK anti-scam
+                  campaigns 6/10
+                </p>
+              </div>
+              <div class="story-quote">
+                "South Korea is more effective with banking app alerts that warn
+                users of potentially scam-related transactions"
+              </div>
+            </div>
+
+            <div class="story-card featured-story">
+              <h3>D***'s 2-Month Ordeal</h3>
+              <div class="story-content">
+                <p>
+                  <strong>Sophisticated Scam:</strong> Posed as telecom company,
+                  then Guangzhou police
+                </p>
+                <p>
+                  <strong>Fake Identity:</strong> Shown fake police ID during
+                  video call
+                </p>
+                <p>
+                  <strong>Manipulation:</strong> Convinced he was a "national
+                  security agent" helping investigate
+                </p>
+                <p>
+                  <strong>Outcome:</strong> Didn't lose money but suffered
+                  emotional trauma
+                </p>
+              </div>
+              <div class="story-quote">
+                "The experience left me feeling insecure and conflicted,
+                especially because I had to keep it secret due to a
+                confidentiality agreement"
+              </div>
+            </div>
+          </div>
+
+          <div class="interview-insights">
+            <h3>Common Themes</h3>
+            <ul>
+              <li>
+                <strong>Targeting Vulnerable Groups:</strong> International
+                students with financial resources are prime targets
+              </li>
+              <li>
+                <strong>Reporting Barriers:</strong> Confusion about how and
+                where to report scam calls
+              </li>
+              <li>
+                <strong>Need for Education:</strong> Universities should
+                implement mandatory anti-scam education
+              </li>
+              <li>
+                <strong>Campaign Limitations:</strong> Current efforts mainly
+                target locals, missing vulnerable newcomers
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Prevention Section -->
+      <section id="prevention" class="section">
+        <div class="container">
+          <h2>How to Protect Yourself</h2>
+
+          <div class="prevention-grid">
+            <div class="prevention-card">
+              <div class="icon">🚫</div>
+              <h3>Don't Answer Unknown Numbers</h3>
+              <p>
+                69.8% of survey respondents avoid answering calls from unknown
+                numbers. Let suspicious calls go to voicemail.
+              </p>
+            </div>
+
+            <div class="prevention-card">
+              <div class="icon">📱</div>
+              <h3>Use Call-Blocking Apps</h3>
+              <p>
+                49.1% use call-blocking software. Consider apps like Scameter or
+                built-in phone blocking features.
+              </p>
+            </div>
+
+            <div class="prevention-card">
+              <div class="icon">👥</div>
+              <h3>Verify with Others</h3>
+              <p>
+                34% verify suspicious calls with family or friends. Don't make
+                decisions alone when under pressure.
+              </p>
+            </div>
+
+            <div class="prevention-card">
+              <div class="icon">🔒</div>
+              <h3>Block Suspicious Numbers</h3>
+              <p>
+                43.4% block suspicious callers. Report numbers to authorities
+                and block them on your device.
+              </p>
+            </div>
+          </div>
+
+          <div class="warning-signs">
+            <h3>🚨 Warning Signs of Scam Calls</h3>
+            <ul>
+              <li>Urgent demands for money or personal information</li>
+              <li>Claims about frozen bank accounts or legal troubles</li>
+              <li>Requests to transfer money to "safe" accounts</li>
+              <li>Pressure to keep the conversation secret</li>
+              <li>Requests for passwords, PINs, or verification codes</li>
+              <li>Offers that sound too good to be true</li>
+            </ul>
+          </div>
+
+          <div class="resources">
+            <h3>Important Resources</h3>
+            <div class="resource-grid">
+              <div class="resource-card">
+                <h4>Anti-Scam Helpline</h4>
+                <p>
+                  <strong><a href="tel:18222">18222</a></strong> - Report
+                  suspicious calls and get advice
+                </p>
+              </div>
+              <div class="resource-card">
+                <h4>
+                  <a
+                    href="https://cyberdefender.hk/scameterplus/"
+                    target="_blank"
+                    rel="nofollow"
+                  >
+                    Scameter App
+                  </a>
+                </h4>
+                <p>
+                  Download the official app to check suspicious numbers and
+                  receive alerts
+                </p>
+              </div>
+              <div class="resource-card">
+                <h4>
+                  <a
+                    href="https://www.hkp-app.police.gov.hk/en/index.html"
+                    target="_blank"
+                    rel="nofollow"
+                  >
+                    Police Reporting
+                  </a>
+                </h4>
+                <p>
+                  Report scam attempts to Hong Kong Police Force online or at
+                  local stations
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Video Section (placeholder for future YouTube video) -->
+      <section id="video" class="section bg-light">
+        <div class="container">
+          <h2>Educational Video</h2>
+          <div class="video-placeholder">
+            <div class="video-content">
+              <div class="play-icon">▶️</div>
+              <p>Educational video coming soon!</p>
+              <p class="video-description">
+                Our team is creating a comprehensive video guide about telephone
+                scam prevention in Hong Kong.
+              </p>
+            </div>
+          </div>
+          <!-- 
+                Future YouTube embed will go here:
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" 
+                            title="YouTube video player" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+                -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>About This Research</h4>
+            <p>
+              This website presents GECC4130 research findings on telephone
+              scams in Hong Kong, based on surveys, interviews, and data
+              analysis conducted by university students.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="tel:18222">Anti-Scam Helpline: 18222</a></li>
+              <li>
+                <a href="https://www.police.gov.hk" target="_blank"
+                  >Hong Kong Police Force</a
+                >
+              </li>
+              <li>
+                <a href="https://www.adcc.gov.hk" target="_blank"
+                  >Anti-Deception Coordination Centre</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Stay Safe</h4>
+            <p>
+              Remember: When in doubt, hang up and verify independently. No
+              legitimate organization will pressure you to act immediately over
+              the phone.
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 GECC4130 Group 1. Educational content for public
+            awareness.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+# Exclude data that may include personal information
+INTERVIEW.md
+RESEARCH.md
+SURVEY.md
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.log
+*.tmp
+*.bak
+dist/
+build/
+
+# Dependencies
+node_modules/
+vendor/
+
+# IDE-specific files
+.idea/
+.vscode/
+*.iml
+.project
+.classpath
+.settings/
+
+# Environment variables
+.env
