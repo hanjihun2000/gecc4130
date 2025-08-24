@@ -52,8 +52,9 @@ nav {
   gap: 0.5rem;
 }
 
-.shield-icon {
-  font-size: 1.5rem;
+.nav-logo {
+  height: 40px;
+  width: auto;
 }
 
 .nav-brand h1 {
@@ -77,21 +78,6 @@ nav {
 
 .nav-links a:hover {
   color: var(--primary-color);
-}
-
-/* Mobile Menu Toggle */
-.mobile-menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 4px;
-}
-
-.mobile-menu-toggle span {
-  width: 25px;
-  height: 3px;
-  background: var(--primary-color);
-  transition: 0.3s;
 }
 
 /* Sidebar Navigation */
@@ -1022,6 +1008,16 @@ footer {
   padding-top: 1rem;
   text-align: center;
   color: #9ca3af;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-logo {
+  height: 50px;
+  width: auto;
+  opacity: 0.8;
 }
 
 /* Responsive Design */
@@ -1147,10 +1143,6 @@ html {
 @media (max-width: 768px) {
   .nav-links {
     display: none;
-  }
-
-  .mobile-menu-toggle {
-    display: flex;
   }
 
   .hero h1 {

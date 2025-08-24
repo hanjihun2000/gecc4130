@@ -240,26 +240,34 @@ document.addEventListener("DOMContentLoaded", function () {
     const nav = document.querySelector("nav");
     const navLinks = document.querySelector(".nav-links");
 
+    // Remove existing mobile menu button if exists
+    const existingBtn = document.querySelector(".mobile-menu-btn");
+    if (existingBtn) {
+      existingBtn.remove();
+    }
+
     // Only create mobile menu if screen is small
     if (window.innerWidth <= 768) {
-      if (!document.querySelector(".mobile-menu-btn")) {
-        const mobileMenuBtn = document.createElement("button");
-        mobileMenuBtn.classList.add("mobile-menu-btn");
-        mobileMenuBtn.innerHTML = "☰";
-        mobileMenuBtn.style.cssText = `
-                    background: none;
-                    border: none;
-                    font-size: 1.5rem;
-                    cursor: pointer;
-                    color: #374151;
-                `;
+      const mobileMenuBtn = document.createElement("button");
+      mobileMenuBtn.classList.add("mobile-menu-btn");
+      mobileMenuBtn.innerHTML = "☰";
 
-        nav.appendChild(mobileMenuBtn);
+      nav.appendChild(mobileMenuBtn);
 
-        mobileMenuBtn.addEventListener("click", function () {
-          navLinks.classList.toggle("mobile-open");
+      mobileMenuBtn.addEventListener("click", function () {
+        navLinks.classList.toggle("mobile-open");
+      });
+
+      // Close mobile menu when clicking on a link
+      const mobileNavLinks = navLinks.querySelectorAll("a");
+      mobileNavLinks.forEach((link) => {
+        link.addEventListener("click", function () {
+          navLinks.classList.remove("mobile-open");
         });
-      }
+      });
+    } else {
+      // Remove mobile-open class if screen is large
+      navLinks.classList.remove("mobile-open");
     }
   }
 
@@ -293,6 +301,20 @@ style.textContent = `
     }
     
     @media (max-width: 768px) {
+        .mobile-menu-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #374151;
+            padding: 0.5rem;
+            margin-left: auto;
+        }
+        
+        .nav-links {
+            display: none;
+        }
+        
         .nav-links.mobile-open {
             display: flex;
             flex-direction: column;
@@ -304,6 +326,16 @@ style.textContent = `
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             padding: 1rem;
             gap: 1rem;
+            z-index: 1000;
+        }
+        
+        .nav-links.mobile-open a {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .nav-links.mobile-open a:last-child {
+            border-bottom: none;
         }
     }
 `;
