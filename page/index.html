@@ -39,7 +39,7 @@
             alt="Chung Chi College Logo"
             class="nav-logo"
           />
-          <h1>HK Telephone Scams Research</h1>
+          <h1>GECC4130 Group 1</h1>
         </div>
         <ul class="nav-links">
           <li><a href="#overview">Overview</a></li>
@@ -47,6 +47,7 @@
           <li><a href="#survey">Survey</a></li>
           <li><a href="#interviews">Interviews</a></li>
           <li><a href="#prevention">Prevention</a></li>
+          <li><a href="#leaflets">Leaflets</a></li>
         </ul>
       </nav>
     </header>
@@ -77,6 +78,10 @@
         <a href="#prevention" class="sidebar-link">
           <span class="sidebar-icon">🛡️</span>
           <span class="sidebar-text">Prevention</span>
+        </a>
+        <a href="#leaflets" class="sidebar-link">
+          <span class="sidebar-icon">📄</span>
+          <span class="sidebar-text">Leaflets</span>
         </a>
       </nav>
     </div>
@@ -543,24 +548,108 @@
         <div class="container">
           <h2>Educational Video</h2>
           <div class="video-placeholder">
-            <div class="video-content">
-              <div class="play-icon">▶️</div>
-              <p>Educational video coming soon!</p>
-              <p class="video-description">
-                Our team is creating a comprehensive video guide about telephone
-                scam prevention in Hong Kong.
-              </p>
+            <div class="video-container">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/YmnjbWzVTCY"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                id="youtube-video"
+              ></iframe>
             </div>
           </div>
-          <!-- 
-                Future YouTube embed will go here:
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" 
-                            title="YouTube video player" frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen></iframe>
-                </div>
-                -->
+        </div>
+      </section>
+
+      <!-- PDF Leaflets Section -->
+      <section id="leaflets" class="section">
+        <div class="container">
+          <h2>Prevention Leaflets</h2>
+          <p class="section-subtitle">
+            Download or view our educational leaflets designed to help you
+            identify and prevent telephone scams.
+          </p>
+
+          <div class="leaflet-tabs">
+            <button
+              class="tab-button active"
+              onclick="showLeaflet('en')"
+              id="en-tab"
+            >
+              English Version
+            </button>
+            <button class="tab-button" onclick="showLeaflet('cn')" id="cn-tab">
+              中文版本
+            </button>
+          </div>
+
+          <div class="leaflet-container">
+            <!-- English PDF -->
+            <div id="en-leaflet" class="pdf-viewer active">
+              <div class="pdf-header">
+                <h3>English Prevention Leaflet</h3>
+                <a
+                  href="assets/en.pdf"
+                  download
+                  class="download-btn"
+                  onclick="trackDownload('en')"
+                >
+                  Download PDF
+                </a>
+              </div>
+              <div class="pdf-embed">
+                <iframe
+                  src="assets/en.pdf"
+                  type="application/pdf"
+                  width="100%"
+                  height="600"
+                  title="English Prevention Leaflet"
+                >
+                  <p>
+                    Your browser does not support PDFs.
+                    <a href="assets/en.pdf" onclick="trackDownload('en')"
+                      >Download the PDF</a
+                    >.
+                  </p>
+                </iframe>
+              </div>
+            </div>
+
+            <!-- Chinese PDF -->
+            <div id="cn-leaflet" class="pdf-viewer">
+              <div class="pdf-header">
+                <h3>中文防騙宣傳單張</h3>
+                <a
+                  href="assets/cn.pdf"
+                  download
+                  class="download-btn"
+                  onclick="trackDownload('cn')"
+                >
+                  下載PDF
+                </a>
+              </div>
+              <div class="pdf-embed">
+                <iframe
+                  src="assets/cn.pdf"
+                  type="application/pdf"
+                  width="100%"
+                  height="600"
+                  title="Chinese Prevention Leaflet"
+                >
+                  <p>
+                    您的瀏覽器不支援PDF。<a
+                      href="assets/cn.pdf"
+                      onclick="trackDownload('cn')"
+                      >下載PDF</a
+                    >。
+                  </p>
+                </iframe>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>

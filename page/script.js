@@ -48,6 +48,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const headerHeight = document.querySelector("header").offsetHeight;
         const targetPosition = targetSection.offsetTop - headerHeight - 20;
 
+        // Update URL hash
+        history.pushState(null, null, targetId);
+
         window.scrollTo({
           top: targetPosition,
           behavior: "smooth",
@@ -69,6 +72,9 @@ document.addEventListener("DOMContentLoaded", function () {
       if (targetSection) {
         const headerHeight = document.querySelector("header").offsetHeight;
         const targetPosition = targetSection.offsetTop - headerHeight - 20;
+
+        // Update URL hash
+        history.pushState(null, null, targetId);
 
         window.scrollTo({
           top: targetPosition,
@@ -217,11 +223,31 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Track CTA button clicks
+  // Track CTA button clicks with smooth scrolling
   const ctaButton = document.querySelector(".cta-button");
   if (ctaButton) {
-    ctaButton.addEventListener("click", function () {
+    ctaButton.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      // Analytics tracking
       trackEvent("cta_click", "Engagement");
+
+      // Smooth scrolling with hash update
+      const targetId = this.getAttribute("href");
+      const targetSection = document.querySelector(targetId);
+
+      if (targetSection) {
+        const headerHeight = document.querySelector("header").offsetHeight;
+        const targetPosition = targetSection.offsetTop - headerHeight - 20;
+
+        // Update URL hash
+        history.pushState(null, null, targetId);
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth",
+        });
+      }
     });
   }
 
@@ -391,4 +417,133 @@ document.addEventListener("DOMContentLoaded", function () {
       event.stopPropagation();
     });
   }
+
+  // Enhanced YouTube video tracking
+  setupVideoTracking();
+});
+
+// PDF Leaflet tab switching functionality
+function showLeaflet(language) {
+  // Hide all PDF viewers
+  const allViewers = document.querySelectorAll(".pdf-viewer");
+  allViewers.forEach((viewer) => viewer.classList.remove("active"));
+
+  // Show selected PDF viewer
+  const selectedViewer = document.getElementById(language + "-leaflet");
+  if (selectedViewer) {
+    selectedViewer.classList.add("active");
+  }
+
+  // Update tab buttons
+  const allTabs = document.querySelectorAll(".tab-button");
+  allTabs.forEach((tab) => tab.classList.remove("active"));
+
+  const selectedTab = document.getElementById(language + "-tab");
+  if (selectedTab) {
+    selectedTab.classList.add("active");
+  }
+
+  // Track tab switch in Google Analytics
+  if (typeof gtag !== "undefined") {
+    gtag("event", "leaflet_tab_switch", {
+      event_category: "PDF Interaction",
+      language: language,
+      event_label: language === "en" ? "English" : "Chinese",
+    });
+  }
+}
+
+// Track PDF downloads
+function trackDownload(language) {
+  if (typeof gtag !== "undefined") {
+    gtag("event", "pdf_download", {
+      event_category: "PDF Interaction",
+      language: language,
+      event_label: language === "en" ? "English Leaflet" : "Chinese Leaflet",
+    });
+  }
+}
+
+// Enhanced YouTube video tracking
+function setupVideoTracking() {
+  // Track when YouTube video becomes ready to play
+  window.onYouTubeIframeAPIReady = function () {
+    const player = new YT.Player("youtube-video", {
+      events: {
+        onStateChange: onPlayerStateChange,
+      },
+    });
+  };
+
+  // Alternative method for tracking video interactions without YouTube API
+  const videoContainer = document.querySelector(".video-container");
+  const iframe = document.querySelector("#youtube-video");
+
+  if (videoContainer && iframe) {
+    // Track when user clicks on video area
+    videoContainer.addEventListener("click", function () {
+      if (typeof gtag !== "undefined") {
+        gtag("event", "video_click", {
+          event_category: "Video Interaction",
+          event_label: "YouTube Video Click",
+          video_title: "Educational Video",
+        });
+      }
+    });
+
+    // Track when iframe gets focus (indicates user interaction)
+    iframe.addEventListener("load", function () {
+      iframe.contentWindow.addEventListener("focus", function () {
+        if (typeof gtag !== "undefined") {
+          gtag("event", "video_focus", {
+            event_category: "Video Interaction",
+            event_label: "YouTube Video Focus",
+            video_title: "Educational Video",
+          });
+        }
+      });
+    });
+  }
+}
+
+// YouTube API state change handler
+function onPlayerStateChange(event) {
+  if (typeof gtag !== "undefined") {
+    switch (event.data) {
+      case YT.PlayerState.PLAYING:
+        gtag("event", "video_play", {
+          event_category: "Video Interaction",
+          event_label: "YouTube Video Play",
+          video_title: "Educational Video",
+        });
+        break;
+      case YT.PlayerState.PAUSED:
+        gtag("event", "video_pause", {
+          event_category: "Video Interaction",
+          event_label: "YouTube Video Pause",
+          video_title: "Educational Video",
+        });
+        break;
+      case YT.PlayerState.ENDED:
+        gtag("event", "video_complete", {
+          event_category: "Video Interaction",
+          event_label: "YouTube Video Complete",
+          video_title: "Educational Video",
+        });
+        break;
+    }
+  }
+}
+
+// Load YouTube API script
+function loadYouTubeAPI() {
+  const tag = document.createElement("script");
+  tag.src = "https://www.youtube.com/iframe_api";
+  const firstScriptTag = document.getElementsByTagName("script")[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+}
+
+// Initialize YouTube API when DOM is loaded
+document.addEventListener("DOMContentLoaded", function () {
+  loadYouTubeAPI();
 });
