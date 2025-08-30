@@ -546,4 +546,58 @@ function loadYouTubeAPI() {
 // Initialize YouTube API when DOM is loaded
 document.addEventListener("DOMContentLoaded", function () {
   loadYouTubeAPI();
+
+  // Initialize PDF viewers with dynamic URL detection
+  initializePDFViewers();
 });
+
+// Dynamic PDF viewer initialization
+function initializePDFViewers() {
+  const baseUrl =
+    window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, "");
+
+  // Update English PDF iframe
+  const enIframe = document.querySelector("#en-leaflet iframe");
+  if (enIframe) {
+    const enPdfUrl = `${baseUrl}/assets/en.pdf`;
+    enIframe.src = `https://docs.google.com/viewer?url=${encodeURIComponent(
+      enPdfUrl
+    )}&embedded=true`;
+
+    // Check if PDF loads, show fallback if not
+    enIframe.onerror = () => showPdfFallback("en");
+    setTimeout(() => {
+      if (!enIframe.contentDocument) {
+        showPdfFallback("en");
+      }
+    }, 5000);
+  }
+
+  // Update Chinese PDF iframe
+  const cnIframe = document.querySelector("#cn-leaflet iframe");
+  if (cnIframe) {
+    const cnPdfUrl = `${baseUrl}/assets/cn.pdf`;
+    cnIframe.src = `https://docs.google.com/viewer?url=${encodeURIComponent(
+      cnPdfUrl
+    )}&embedded=true`;
+
+    // Check if PDF loads, show fallback if not
+    cnIframe.onerror = () => showPdfFallback("cn");
+    setTimeout(() => {
+      if (!cnIframe.contentDocument) {
+        showPdfFallback("cn");
+      }
+    }, 5000);
+  }
+}
+
+// Show PDF fallback when viewer fails
+function showPdfFallback(language) {
+  const iframe = document.querySelector(`#${language}-leaflet iframe`);
+  const fallback = document.querySelector(`#${language}-leaflet .pdf-fallback`);
+
+  if (iframe && fallback) {
+    iframe.style.display = "none";
+    fallback.style.display = "block";
+  }
+}
