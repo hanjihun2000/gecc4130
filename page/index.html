@@ -591,30 +591,58 @@
             <div id="en-leaflet" class="pdf-viewer active">
               <div class="pdf-header">
                 <h3>English Prevention Leaflet</h3>
-                <a
-                  href="assets/en.pdf"
-                  download
-                  class="download-btn"
-                  onclick="trackDownload('en')"
-                >
-                  Download PDF
-                </a>
+                <div class="pdf-actions">
+                  <a
+                    href="assets/en.pdf"
+                    target="_blank"
+                    class="view-btn"
+                    onclick="trackDownload('en')"
+                  >
+                    View PDF
+                  </a>
+                  <a
+                    href="assets/en.pdf"
+                    download
+                    class="download-btn"
+                    onclick="trackDownload('en')"
+                  >
+                    Download PDF
+                  </a>
+                </div>
               </div>
               <div class="pdf-embed">
-                <iframe
-                  src="assets/en.pdf"
+                <object
+                  data="assets/en.pdf"
                   type="application/pdf"
                   width="100%"
                   height="600"
-                  title="English Prevention Leaflet"
                 >
-                  <p>
-                    Your browser does not support PDFs.
-                    <a href="assets/en.pdf" onclick="trackDownload('en')"
-                      >Download the PDF</a
-                    >.
-                  </p>
-                </iframe>
+                  <iframe
+                    src="https://docs.google.com/viewer?url=https://gecc4130.netlify.app/assets/en.pdf&embedded=true"
+                    width="100%"
+                    height="600"
+                    frameborder="0"
+                  >
+                    <div class="pdf-fallback">
+                      <p><strong>English Prevention Leaflet</strong></p>
+                      <p>
+                        Your browser cannot display PDFs directly. Please use
+                        one of the options below:
+                      </p>
+                      <div class="fallback-actions">
+                        <a
+                          href="assets/en.pdf"
+                          target="_blank"
+                          class="fallback-btn"
+                          >Open in New Tab</a
+                        >
+                        <a href="assets/en.pdf" download class="fallback-btn"
+                          >Download PDF</a
+                        >
+                      </div>
+                    </div>
+                  </iframe>
+                </object>
               </div>
             </div>
 
@@ -622,31 +650,55 @@
             <div id="cn-leaflet" class="pdf-viewer">
               <div class="pdf-header">
                 <h3>中文防騙宣傳單張</h3>
-                <a
-                  href="assets/cn.pdf"
-                  download
-                  class="download-btn"
-                  onclick="trackDownload('cn')"
-                >
-                  下載PDF
-                </a>
+                <div class="pdf-actions">
+                  <a
+                    href="assets/cn.pdf"
+                    target="_blank"
+                    class="view-btn"
+                    onclick="trackDownload('cn')"
+                  >
+                    查看PDF
+                  </a>
+                  <a
+                    href="assets/cn.pdf"
+                    download
+                    class="download-btn"
+                    onclick="trackDownload('cn')"
+                  >
+                    下載PDF
+                  </a>
+                </div>
               </div>
               <div class="pdf-embed">
-                <iframe
-                  src="assets/cn.pdf"
+                <object
+                  data="assets/cn.pdf"
                   type="application/pdf"
                   width="100%"
                   height="600"
-                  title="Chinese Prevention Leaflet"
                 >
-                  <p>
-                    您的瀏覽器不支援PDF。<a
-                      href="assets/cn.pdf"
-                      onclick="trackDownload('cn')"
-                      >下載PDF</a
-                    >。
-                  </p>
-                </iframe>
+                  <iframe
+                    src="https://docs.google.com/viewer?url=https://gecc4130.netlify.app/assets/cn.pdf&embedded=true"
+                    width="100%"
+                    height="600"
+                    frameborder="0"
+                  >
+                    <div class="pdf-fallback">
+                      <p><strong>中文防騙宣傳單張</strong></p>
+                      <p>您的瀏覽器無法直接顯示PDF。請使用以下選項之一：</p>
+                      <div class="fallback-actions">
+                        <a
+                          href="assets/cn.pdf"
+                          target="_blank"
+                          class="fallback-btn"
+                          >在新頁面開啟</a
+                        >
+                        <a href="assets/cn.pdf" download class="fallback-btn"
+                          >下載PDF</a
+                        >
+                      </div>
+                    </div>
+                  </iframe>
+                </object>
               </div>
             </div>
           </div>

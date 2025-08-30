@@ -1030,6 +1030,30 @@ main {
   font-weight: 600;
 }
 
+.pdf-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.view-btn {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.view-btn:hover {
+  background: #f0b84a;
+  transform: translateY(-1px);
+}
+
 .download-btn {
   background: var(--primary-color);
   color: white;
@@ -1037,13 +1061,44 @@ main {
   border-radius: 6px;
   text-decoration: none;
   font-weight: 500;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
 .download-btn:hover {
+  background: #6a1459;
+  transform: translateY(-1px);
+}
+
+.pdf-fallback {
+  padding: 2rem;
+  text-align: center;
+  background: #f8f9fa;
+  border: 2px dashed #dee2e6;
+  margin: 1rem;
+  border-radius: 8px;
+}
+
+.fallback-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.fallback-btn {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.fallback-btn:hover {
   background: #6a1459;
 }
 
@@ -1074,7 +1129,18 @@ main {
     text-align: center;
   }
 
-  .pdf-embed iframe {
+  .pdf-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .fallback-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pdf-embed iframe,
+  .pdf-embed object {
     height: 400px;
   }
 }
