@@ -971,6 +971,12 @@ main {
 }
 
 /* PDF Leaflets Section */
+#leaflets {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
 .leaflet-tabs {
   display: flex;
   gap: 1rem;
@@ -1005,6 +1011,8 @@ main {
   border-radius: 12px;
   box-shadow: 0 4px 20px var(--shadow);
   overflow: hidden;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .pdf-viewer {
@@ -1104,12 +1112,16 @@ main {
 
 .pdf-embed {
   background: #f8f9fa;
+  position: relative;
+  overflow: hidden;
 }
 
-.pdf-embed iframe {
+.pdf-embed iframe,
+.pdf-embed object {
   display: block;
   border: none;
   background: white;
+  width: 100%;
 }
 
 /* Mobile responsiveness for PDF section */
