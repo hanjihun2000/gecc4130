@@ -935,9 +935,8 @@ main {
 /* Video Section */
 .video-placeholder {
   background: #f3f4f6;
-  border: 2px dashed #d1d5db;
   border-radius: 12px;
-  padding: 4rem 2rem;
+  padding: 1rem;
   text-align: center;
   margin: 2rem 0;
 }
@@ -964,7 +963,7 @@ main {
   overflow: hidden;
   max-width: 100%;
   background: #000;
-  border-radius: 12px;
+  border-radius: 8px;
 }
 
 .video-container iframe {
@@ -973,6 +972,7 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
+  border-radius: 8px;
 }
 
 /* PDF Leaflets Section */
@@ -1166,6 +1166,20 @@ main {
   .pdf-embed iframe,
   .pdf-embed object {
     height: 400px;
+  }
+
+  /* Video section mobile optimization */
+  .video-placeholder {
+    padding: 0.5rem;
+    margin: 1rem 0;
+  }
+
+  .video-container {
+    border-radius: 4px;
+  }
+
+  .video-container iframe {
+    border-radius: 4px;
   }
 }
 
