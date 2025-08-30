@@ -563,14 +563,6 @@ function initializePDFViewers() {
     enIframe.src = `https://docs.google.com/viewer?url=${encodeURIComponent(
       enPdfUrl
     )}&embedded=true`;
-
-    // Check if PDF loads, show fallback if not
-    enIframe.onerror = () => showPdfFallback("en");
-    setTimeout(() => {
-      if (!enIframe.contentDocument) {
-        showPdfFallback("en");
-      }
-    }, 5000);
   }
 
   // Update Chinese PDF iframe
@@ -580,24 +572,5 @@ function initializePDFViewers() {
     cnIframe.src = `https://docs.google.com/viewer?url=${encodeURIComponent(
       cnPdfUrl
     )}&embedded=true`;
-
-    // Check if PDF loads, show fallback if not
-    cnIframe.onerror = () => showPdfFallback("cn");
-    setTimeout(() => {
-      if (!cnIframe.contentDocument) {
-        showPdfFallback("cn");
-      }
-    }, 5000);
-  }
-}
-
-// Show PDF fallback when viewer fails
-function showPdfFallback(language) {
-  const iframe = document.querySelector(`#${language}-leaflet iframe`);
-  const fallback = document.querySelector(`#${language}-leaflet .pdf-fallback`);
-
-  if (iframe && fallback) {
-    iframe.style.display = "none";
-    fallback.style.display = "block";
   }
 }
